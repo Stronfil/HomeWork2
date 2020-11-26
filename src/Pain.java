@@ -1,73 +1,56 @@
 import java.sql.SQLOutput;
 import java.util.Arrays;
+import java.util.Scanner;
+import java.util.Random;
+
 
 public class Pain {
-
     public static void main(String[] args) {
-        //Задание3     //checkArr();
-        //здаание4  //fillDiagonal();
+        Scanner sc = new Scanner(System.in);
+        Random rand = new Random();
+        int a = rand.nextInt(9);
+        int b ;
 
 
-//Задание1
-    /*int[] quest = {1, 0, 1, 1, 0};
+        do {
+            boolean fal=false;
+            for (int i = 0; i <3 ; i++) {
 
-        for (int i = 0; i < quest.length; i++) {
-            if (quest[i]==0){
-                quest[i]=1;
-            }else {
-                quest[i]=0;
+            System.out.print("Введите число :");
+            b=sc.nextInt();
 
-            }
+            if(a>b){
+                System.out.println("Загаданное число больше");
+            }if(b>a){
+                System.out.println("Загаданное число меньше");
+            }if(i==2){
+                    System.out.println("Вы не угадали ,загаденное число:"+a);
+                }
+            if(a==b) {
+                System.out.println("Вы угадали загаданное число :" + a);
+                fal=true;
 
-         System.out.println(quest[i] );
+                break;
 
-        }
-
-
-    //Задание2
-            int[] two = new int[8];
-
-            for (int i = 0, j = 0; i < two.length; i++, j += 3) {
-
-                two[i] = j;
-                System.out.println(two[i] );*/
-
-
-
-
-
-            }
-
-//Задание3
-    public static void checkArr() {
-        int[] are = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
-        for (int i = 0; i < are.length; i++) {
-            if (are[i] < 6) {
-                are[i] *= 2;
-            }
-
-
-            System.out.println(are[i]);
-
+                }
 
         }
-    }
-//здаание4
-    public static void fillDiagonal() {
-    int[][] arr = new int[4][4];
-    for (int i = 0; i < arr.length; i++) {
-        for (int j = 0; j < arr[i].length; j++) {
-            if (i == j || i + j == 4 - 1) {
-                arr[i][j] = 1;
-            }
+            System.out.println("Сыграть еще раз ?");
 
-            System.out.print(arr[i][j] + " ");
-        }
-        System.out.println(Arrays.toString(arr));
-    }
+        } while (sc.nextInt()==1);
+
+
+
     }
 
 }
+
+
+
+
+
+
+
 
 
 
